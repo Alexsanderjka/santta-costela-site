@@ -1,387 +1,177 @@
-⁹<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Santta Costela | Restaurante</title>
-
-    <meta name="description"
-        content="Santta Costela - Costela no bafo, frango assado, linguiça e muito mais. Faça seu pedido pelo WhatsApp.">
-
-    <link rel="stylesheet" href="style.css">
+    <title>Santta Costela | Delivery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('custela.jpg') no-repeat center center/cover;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 4px solid #d97706;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #d1d5db;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        h2.section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #d97706;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease;
+            border: 1px solid #2d2d2d;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .card-content p {
+            font-size: 0.95rem;
+            color: #aaaaaa;
+            margin-bottom: 15px;
+        }
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #10b981;
+            margin-bottom: 15px;
+        }
+        .btn-pedir {
+            display: block;
+            width: 100%;
+            background-color: #25d366;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .btn-pedir:hover {
+            background-color: #1ebe5d;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #0a0a0a;
+            color: #777777;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- CABEÇALHO -->
-    <header class="header">
-
-        <div class="logo">
-            <span>🍖</span>
-            <div>
-                <strong>Santta Costela</strong>
-                <small>O sabor que conquista</small>
-            </div>
-        </div>
-
-        <button class="cart-button" onclick="abrirCarrinho()">
-            🛒
-            <span id="cart-count">0</span>
-        </button>
-
+    <header>
+        <h1>Santta Costela</h1>
+        <p>A verdadeira costela no bafo e cortes especiais direto para a sua casa</p>
     </header>
 
-
-    <!-- BANNER PRINCIPAL -->
-    <main>
-
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <span class="hero-tag">🔥 FEITO NA BRASA</span>
-
-                <h1>
-                    Sabor de verdade,
-                    <strong>do nosso fogo para sua mesa.</strong>
-                </h1>
-
-                <p>
-                    Costela no bafo, carnes assadas e aquele sabor
-                    especial da Santta Costela.
-                </p>
-
-                <button class="primary-button"
-                    onclick="document.getElementById('cardapio').scrollIntoView()">
-                    Ver cardápio
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- CATEGORIAS -->
-        <section class="categories">
-
-            <h2>Escolha uma categoria</h2>
-
-            <div class="category-list">
-
-                <button onclick="filtrarProdutos('todos')">
-                    🍽️ Todos
-                </button>
-
-                <button onclick="filtrarProdutos('marmitas')">
-                    🍱 Marmitas
-                </button>
-
-                <button onclick="filtrarProdutos('carnes')">
-                    <img src="custela.jpg" alt="Costela no Bafo" style="width:100%; height:180px; object-fit:cover; border-top-left-radius:16px; border-top-right-radius:16px;">
- Carnes
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- CARDÁPIO -->
-        <section class="menu" id="cardapio">
-
-            <div class="section-title">
-                <span>🍴</span>
-
-                <div>
-                    <h2>Nosso cardápio</h2>
-                    <p>Escolha seus favoritos</p>
+    <div class="container">
+        <h2 class="section-title">Nosso Cardápio</h2>
+        
+        <div class="menu-grid">
+            <!-- Item 1: Costela Principal -->
+            <div class="card">
+                <img src="custela.jpg" alt="Costela no Bafo">
+                <div class="card-content">
+                    <h3>Costela no Bafo Especial</h3>
+                    <p>Nossa tradicional costela assada lentamente por horas, desmanchando na boca.</p>
+                    <div class="price">R$ 89,90</div>
+                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20pedir%20a%20Costela%20no%20Bafo!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
                 </div>
             </div>
 
-
-            <div class="products" id="products">
-
-                <!-- COSTELA -->
-                <article class="product"
-                    data-category="carnes">
-
-                    <div class="product-image">
-                        <img src="costela2.jpg" alt="Costela Especial" style="width:100%; height:180px; object-fit:cover; border-top-left-radius:16px; border-top-right-radius:16px;">
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <h3>Costela no Bafo</h3>
-
-                        <p>
-                            Costela bovina preparada lentamente,
-                            macia e cheia de sabor.
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <strong>R$ 25,00</strong>
-
-                            <button onclick="adicionarCarrinho(
-                                'Costela no Bafo',
-                                25
-                            )">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- FRANGO -->
-                <article class="product"
-                    data-category="carnes">
-
-                    <div class="product-image">
-                        <img src="frango.jpg" alt="Frango Assado" style="width:100%; height:180px; object-fit:cover; border-top-left-radius:16px; border-top-right-radius:16px;">
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <h3>Frango Assado</h3>
-
-                        <p>
-                            Frango assado dourado, suculento
-                            e bem temperado.
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <strong>R$ 25,00</strong>
-
-                            <button onclick="adicionarCarrinho(
-                                'Frango Assado',
-                                25
-                            )">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- LINGUIÇA -->
-                <article class="product"
-                    data-category="carnes">
-
-                    <div class="product-image">
-                        <img src="linguica.jpg" alt="Linguiça Artesanal" style="width:100%; height:180px; object-fit:cover; border-top-left-radius:16px; border-top-right-radius:16px;">
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <h3>Linguiça Assada</h3>
-
-                        <p>
-                            Linguiça assada e douradinha,
-                            perfeita para acompanhar sua refeição.
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <strong>R$ 25,00</strong>
-
-                            <button onclick="adicionarCarrinho(
-                                'Linguiça Assada',
-                                25
-                            )">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PARMEGIANA -->
-                <article class="product"
-                    data-category="marmitas">
-
-                    <div class="product-image">
-                        🍛
-                    </div>
-
-                    <div class="product-info">
-
-                        <h3>Parmegiana de Frango</h3>
-
-                        <p>
-                            Filé de frango empanado, molho,
-                            queijo e muito sabor.
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <strong>R$ 30,00</strong>
-
-                            <button onclick="adicionarCarrinho(
-                                'Parmegiana de Frango',
-                                30
-                            )">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- COSTELINHA -->
-                <article class="product"
-                    data-category="porcoes">
-
-                    <div class="product-image">
-                        🍖
-                    </div>
-
-                    <div class="product-info">
-
-                        <h3>Costelinha Suína</h3>
-
-                        <p>
-                            Costelinha suína assada,
-                            macia e saborosa.
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <strong>R$ 25,00</strong>
-
-                            <button onclick="adicionarCarrinho(
-                                'Costelinha Suína',
-                                25
-                            )">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- MARMITA COMPLETA -->
-                <article class="product"
-                    data-category="marmitas">
-
-                    <div class="product-image">
-                        🍱
-                    </div>
-
-                    <div class="product-info">
-
-                        <h3>Marmita Completa</h3>
-
-                        <p>
-                            Costela + frango + linguiça,
-                            acompanhados de arroz, feijão,
-                            batata frita e salada.
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <strong>R$ 30,00</strong>
-
-                            <button onclick="adicionarCarrinho(
-                                'Marmita Completa',
-                                30
-                            )">
-                                +
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- CARRINHO -->
-    <div class="cart-overlay" id="cart-overlay">
-
-        <div class="cart">
-
-            <div class="cart-header">
-
-                <h2>🛒 Seu pedido</h2>
-
-                <button onclick="fecharCarrinho()">
-                    ✕
-                </button>
-
-            </div>
-
-
-            <div id="cart-items">
-                <p class="empty-cart">
-                    Seu carrinho está vazio.
-                </p>
-            </div>
-
-
-            <div class="cart-footer">
-
-                <div class="cart-total">
-                    <span>Total</span>
-                    <strong id="cart-total">
-                        R$ 0,00
-                    </strong>
+            <!-- Item 2: Linguiça -->
+            <div class="card">
+                <img src="linguica.jpg" alt="Linguiça Artesanal">
+                <div class="card-content">
+                    <h3>Linguiça Artesanal</h3>
+                    <p>Linguiça suína artesanal suculenta assada na brasa com tempero da casa.</p>
+                    <div class="price">R$ 45,90</div>
+                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20pedir%20a%20Linguiça%20Artesanal!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
                 </div>
-
-                <button class="checkout-button"
-                    onclick="finalizarPedido()">
-                    Fazer pedido pelo WhatsApp
-                </button>
-
             </div>
 
+            <!-- Item 3: Frango -->
+            <div class="card">
+                <img src="frango.jpg" alt="Frango Assado">
+                <div class="card-content">
+                    <h3>Frango Passarinho / Assado</h3>
+                    <p>Cortes de frango selecionados, crocantes por fora e macios por dentro.</p>
+                    <div class="price">R$ 49,90</div>
+                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20pedir%20o%20Frango!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Item 4: Segunda Costela / Outro Corte -->
+            <div class="card">
+                <img src="costela2.jpg" alt="Costela na Brasa">
+                <div class="card-content">
+                    <h3>Costela na Brasa Premium</h3>
+                    <p>Outra deliciosa opção do nosso corte especial defumado na brasa.</p>
+                    <div class="price">R$ 94,90</div>
+                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20pedir%20a%20Costela%20na%20Brasa%20Premium!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
+                </div>
+            </div>
         </div>
-
     </div>
 
-
-    <!-- RODAPÉ -->
-    <footer class="footer">
-
-        <div class="footer-logo">
-            🍖 <strong>Santta Costela</strong>
-        </div>
-
-        <p>
-            Traga sua família. Você é bem-vindo!
-        </p>
-
-        <p>
-            📍 Av. Doutor Armando Colângelo, 1222
-        </p>
-
-        <p class="copyright">
-            © 2026 Santta Costela. Todos os direitos reservados.
-        </p>
-
+    <footer>
+        <p>&copy; 2026 Santta Costela. Todos os direitos reservados.</p>
     </footer>
-
-
-    <script src="script.js"></script>
 
 </body>
 </html>
+
