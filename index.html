@@ -19,17 +19,17 @@
         header {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('custela.jpg') no-repeat center center/cover;
             text-align: center;
-            padding: 60px 20px;
+            padding: 50px 20px;
             border-bottom: 4px solid #d97706;
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
         header p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #d1d5db;
         }
         .container {
@@ -39,51 +39,50 @@
         }
         h2.section-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             color: #d97706;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
         .card {
             background-color: #1e1e1e;
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             border: 1px solid #2d2d2d;
-        }
-        .card:hover {
-            transform: translateY(-5px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .card img {
             width: 100%;
-            height: 200px;
+            height: 170px;
             object-fit: cover;
         }
         .card-content {
-            padding: 20px;
+            padding: 15px;
         }
         .card-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
             color: #ffffff;
         }
         .card-content p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #aaaaaa;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .price {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             color: #10b981;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .btn-pedir {
             display: block;
@@ -91,23 +90,40 @@
             background-color: #25d366;
             color: white;
             text-align: center;
-            padding: 12px;
+            padding: 10px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: background 0.2s;
         }
         .btn-pedir:hover {
             background-color: #1ebe5d;
         }
+        .info-box {
+            background-color: #1e1e1e;
+            border: 1px solid #2d2d2d;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .info-box h3 {
+            color: #d97706;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        .info-box p {
+            color: #cccccc;
+            font-size: 0.95rem;
+        }
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 25px;
             background-color: #0a0a0a;
             color: #777777;
-            margin-top: 50px;
-            font-size: 0.9rem;
+            margin-top: 40px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -115,56 +131,62 @@
 
     <header>
         <h1>Santta Costela</h1>
-        <p>A verdadeira costela no bafo e cortes especiais direto para a sua casa</p>
+        <p>Os melhores assados e porções direto para a sua casa</p>
     </header>
 
     <div class="container">
         <h2 class="section-title">Nosso Cardápio</h2>
         
         <div class="menu-grid">
-            <!-- Item 1: Costela Principal -->
+            <!-- Item 1: Costela no bafo -->
             <div class="card">
                 <img src="custela.jpg" alt="Costela no Bafo">
                 <div class="card-content">
-                    <h3>Costela no Bafo Especial</h3>
-                    <p>Nossa tradicional costela assada lentamente por horas, desmanchando na boca.</p>
-                    <div class="price">R$ 89,90</div>
-                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20pedir%20a%20Costela%20no%20Bafo!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
+                    <h3>Costela no Bafo</h3>
+                    <p>Nossa tradicional costela suculenta e macia.</p>
+                    <div class="price">R$ 25,00</div>
+                    <a href="https://wa.me/5511924869801?text=Olá,%20gostaria%20de%20pedir%20a%20Costela%20no%20Bafo!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
                 </div>
             </div>
 
-            <!-- Item 2: Linguiça -->
+            <!-- Item 2: Linguiça assada -->
             <div class="card">
-                <img src="linguica.jpg" alt="Linguiça Artesanal">
+                <img src="linguica.jpg" alt="Linguiça Assada">
                 <div class="card-content">
-                    <h3>Linguiça Artesanal</h3>
-                    <p>Linguiça suína artesanal suculenta assada na brasa com tempero da casa.</p>
-                    <div class="price">R$ 45,90</div>
-                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20pedir%20a%20Linguiça%20Artesanal!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
+                    <h3>Linguiça Assada</h3>
+                    <p>Linguiça artesanal saborosa preparada na brasa.</p>
+                    <div class="price">R$ 25,00</div>
+                    <a href="https://wa.me/5511924869801?text=Olá,%20gostaria%20de%20pedir%20a%20Linguiça%20Assada!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
                 </div>
             </div>
 
-            <!-- Item 3: Frango -->
+            <!-- Item 3: Frango assado -->
             <div class="card">
                 <img src="frango.jpg" alt="Frango Assado">
                 <div class="card-content">
-                    <h3>Frango Passarinho / Assado</h3>
-                    <p>Cortes de frango selecionados, crocantes por fora e macios por dentro.</p>
-                    <div class="price">R$ 49,90</div>
-                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20pedir%20o%20Frango!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
+                    <h3>Frango Assado</h3>
+                    <p>Frango temperado e assado no ponto certo.</p>
+                    <div class="price">R$ 25,00</div>
+                    <a href="https://wa.me/5511924869801?text=Olá,%20gostaria%20de%20pedir%20o%20Frango%20Assado!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
                 </div>
             </div>
 
-            <!-- Item 4: Segunda Costela / Outro Corte -->
+            <!-- Item 4: Parmegiana de frango -->
             <div class="card">
-                <img src="costela2.jpg" alt="Costela na Brasa">
+                <img src="costela2.jpg" alt="Parmegiana de Frango">
                 <div class="card-content">
-                    <h3>Costela na Brasa Premium</h3>
-                    <p>Outra deliciosa opção do nosso corte especial defumado na brasa.</p>
-                    <div class="price">R$ 94,90</div>
-                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20pedir%20a%20Costela%20na%20Brasa%20Premium!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
+                    <h3>Parmegiana de Frango</h3>
+                    <p>Filé de frango empanado, molho de tomate especial e queijo derretido.</p>
+                    <div class="price">R$ 30,00</div>
+                    <a href="https://wa.me/5511924869801?text=Olá,%20gostaria%20de%20pedir%20a%20Parmegiana%20de%20Frango!" class="btn-pedir" target="_blank">Pedir no WhatsApp</a>
                 </div>
             </div>
+        </div>
+
+        <!-- Endereço / Localização -->
+        <div class="info-box">
+            <h3>📍 Onde Estamos</h3>
+            <p>Av. Doutor Armando Colangelo, 1222 - Barreto, Arujá - SP</p>
         </div>
     </div>
 
